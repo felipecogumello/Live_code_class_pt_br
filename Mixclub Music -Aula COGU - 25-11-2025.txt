@@ -1,0 +1,132 @@
+// Control + Enter = Play + Update
+// Control + . = Pause
+// Control + /
+
+
+// Quero fazer notas musicais, como faço?
+// note("57 61 64 69")
+// note("a3 c#4 e4 a4")
+// freq("220 275 330 440")
+
+
+// Consigo criar uma bateria completa:
+// s("bd - sd - rim - hh - oh - lt - mt - ht - rd - cr")
+// bd = bass drum
+// sd = snare drum
+// rim = rimshot
+// hh = hihat
+// oh = open hihat
+// lt = low tom
+// mt = middle tom
+// ht = high tom
+// rd = ride cymbal
+// cr = crash cymbal
+
+
+//criando um Kick, como encaixar os parametros:
+// sound("bd*2 ht")
+// s("bd mt*2")
+
+// Agora com a personalização de uma DrumMachine
+// sound("bd hh sd oh").bank("AkaiXR10")
+
+// Agora um Kick 4/4
+// stack(
+ // sound("bd*4")
+// )
+
+// Kick personalizado
+// stack(
+// s("bd*4").gain(1.2).bank("RolandTR808").cpm(170)
+// )
+
+//Um kick com groove
+//stack(
+//  s("bd*4, [hh]*2, oh").gain(4).bank("RolandTR808")
+//)
+//Ou então
+//stack(
+//  s("bd*4, hh*3").gain(1.2).bank("RolandTR808")
+//)
+
+
+// Kick com parametros diferentes
+// $: s("bd*4, [- cp]*2 - - , [- hh]*4").gain(3).bank("RolandTR808")
+// $: s("[- cp]*2 - - , [- hh]*4").gain(3).bank("RolandTR808")
+// $: s("cp*2 - -").gain(3).bank("RolandTR808")
+// $: s("[cp*3 - - hh]*4").gain(3).bank("RolandTR808")
+
+// Funções com parametros
+// note("a g f e b c")
+ // .cutoff("<500 1000 2000 [4000 8000]>")
+ // .gain(.8)
+ // .s('sawtooth')
+ // .log()
+
+// Waveforms principais
+ // note("c2 <eb2 <g2 g1>>".fast(2))
+  // .sound("<sawtooth square triangle sine>")
+  // ._scope()
+
+// Noises
+ // sound("<white pink brown>")._scope()
+
+// Exemplo de uso do Wavetable da ferramenta
+ // samples('bubo:waveforms');
+ // note("<[g3,b3,e4]!2 [a3,c3,e4] [b3,d3,f#4]>")
+ // .n("<1 2 3 4 5 6 7 8 9 10>/2").room(0.5).size(0.9)
+ // .s('wt_flute').velocity(0.25).often(n => n.ply(2))
+ // .release(0.125).decay("<0.1 0.25 0.3 0.4>").sustain(0)
+ // .cutoff(2000).cutoff("<1000 2000 4000>").fast(4)
+ // ._scope()
+
+
+
+
+//KICKS PRINCIPAIS
+  // $: s("bd*4, [- cp]*2 - - , [- hh]*4").gain(8).bank("RolandTR707").sustain(1).scope().color("blue")
+ // $: s("bd").gain(3).bank("RolandTR707").cpm(60).cutoff("<900 9000 4000 250>").scope().color("cyan magenta")
+ // $: s("tb!16?").gain(1.7).bank("bossdr550").scaleTrans("2 4 1 5")._scope().color("yellow")
+
+//BASSLINE
+ // $: n("c g*2 @2 e - c").sound("xylophone_soft_ff").gain(3).lpsustain(0.2).delay(slider(0.616))._punchcard()
+ // $: n("c@c g*2 @3 e c").sound("gm_koto").gain(5).lpenv(2)._punchcard().color("purple")
+  // $: n("<g@g g#*2 e f# c*2> [d f# g a] -g#*2 c f#").sound("gm_electric_guitar_muted").cutoff("<300 1500>").gain(0.2).lpenv(4)._punchcard().delay(9)
+
+//PADRÕES DE SONS Q CURTI:
+//gm_electric_guitar_muted
+//gm_electric_guitar_jazz
+//gm_koto
+//gm_slap_bass
+
+  // $: n("c@c g*2 e c").sound("gm_muted_trumpet").cutoff("<600 2000 1500>").gain(0.9).lpenv(1)._punchcard().color("green")
+
+//BASSLINE
+   // $: n("<3@3 4 5 @3 6>*2".add(-14, -7)).gain(1).scale("g:minor")
+   // .s("supersaw")
+   // .seg(16)
+   // .rlp(slider(0.259)).lpenv(1)
+   // .delay(0.3)
+
+  // $: n("e2".add(3)).gain(6).scale("e:minor")
+  // .sound("sax").tremoloshape(1, 2).scope()
+  // .add(note("0,.4"))
+  // .rlp(slider(0.552)).lpenv(1)._pianoroll()
+  // .delay(5)
+
+//HIHAT PARA DAR COR
+ // $: n("cp*4").sound("hihat").delay(3).gain(6).cutoff("<1500 4000 7000 500>").punchcard().color("red")
+
+// PIANO PARA BRINCAR
+ // $: n("<g@g g#*2 e f# c*2> [d f# g a] -g#*2 c f#").gain(2)._pianoroll()
+ // .s("cajon")
+
+
+
+
+
+OBRIGADO POR ESCUTAREM ATÉ AQUI, É O FIMMMMMMMMMMMM
+OBRIGADO POR ESCUTAREM ATÉ AQUI, É O FIMMMMMMMMMMMM
+OBRIGADO POR ESCUTAREM ATÉ AQUI, É O FIMMMMMMMMMMMM
+OBRIGADO POR ESCUTAREM ATÉ AQUI, É O FIMMMMMMMMMMMM
+OBRIGADO POR ESCUTAREM ATÉ AQUI, É O FIMMMMMMMMMMMM
